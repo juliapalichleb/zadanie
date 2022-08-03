@@ -1,24 +1,20 @@
-import './App.css';
 import Table from "./componets/Table/Table";
+import Form from "./componets/Form/Form";
+import { useState } from "react";
+import './App.css';
 
 function App() {
+    const [formRecived, setFormRecived] = useState({});
+
+    const takeForm = (formData) => {
+    setFormRecived (formData);
+    }
+
   return (
     <div className="App">
       <header className="App-header">
-        {/*<img src={logo} className="App-logo" alt="logo" />*/}
-        {/*<p>*/}
-        {/*  Edit <code>src/App.js</code> and save to reload.*/}
-        {/*</p>*/}
-        {/*<a*/}
-        {/*  className="App-link"*/}
-        {/*  href="https://reactjs.org"*/}
-        {/*  target="_blank"*/}
-        {/*  rel="noopener noreferrer"*/}
-        {/*>*/}
-        {/*  Learn React hagshasg*/}
-        {/*</a>*/}
-          <Table />
-        {/*  <Counter />*/}
+          <Form takeForm={takeForm}/>
+          <Table formRecived={formRecived}/>
       </header>
     </div>
   );
