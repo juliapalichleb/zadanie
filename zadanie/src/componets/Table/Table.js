@@ -1,7 +1,8 @@
 import Users from "../Users/Users";
 import RowData from "../RowData/RowData";
-import {useState} from "react";
+import { useState } from "react";
 import data from "../../data/user-data.json";
+import { isEmpty } from "lodash";
 import './Table.css';
 
 
@@ -9,7 +10,12 @@ import './Table.css';
 const Table = ({ formRecived }) => {
 
     const [selectedUser,setSelectedUser] = useState();
-    const updateData = [...data, formRecived]
+    // const [updateData,setUpdateData] = useState();
+
+    const updateData = isEmpty(formRecived) ?  [...data] : [...data,formRecived];
+    // console.log(formRecived);
+    // console.log(updateData);
+    // console.log(isEmpty(formRecived));
 
     return (
         <>

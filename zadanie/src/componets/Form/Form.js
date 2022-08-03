@@ -9,6 +9,9 @@ const Form = ({ takeForm }) => {
             age: "",
         },
         validationSchema: YupObj.object ({
+            name: YupObj.string().max(10, 'Too long')
+                .required('Required'),
+            // age: YupObj.number().
         }),
         onSubmit: ( values ) => takeForm(values)
     });
@@ -29,6 +32,7 @@ const Form = ({ takeForm }) => {
                 onChange={formik.handleChange}
                 value={formik.values.name}
             />
+            {formik.errors.name ? <p>Name is too long</p> : null}
             <input
                 id="age"
                 name="age"
