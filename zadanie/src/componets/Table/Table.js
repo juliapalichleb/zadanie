@@ -8,21 +8,23 @@ import './Table.css';
 const Table = ({ formRecived }) => {
 
     const [selectedUser,setSelectedUser] = useState();
-    // const [updateData,setUpdateData] = useState();
 
     const updateData = isEmpty(formRecived) ?  [...data] : [...data,formRecived];
+
     // console.log(formRecived);
     // console.log(updateData);
-    // console.log(isEmpty(formRecived));
+    // // console.log(isEmpty(formRecived));
 
     return (
         <>
             <table>
                 <thead>
                 <tr>
-                    <th>Imie</th>
-                    <th>nazwisko</th>
-                    <th>wiek</th>
+                    <th>Surname</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Polish</th>
                 </tr>
                 </thead>
                 <tbody>

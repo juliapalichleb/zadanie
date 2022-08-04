@@ -2,18 +2,24 @@
   {
     "surname":"Adrian",
     "name":"b",
-    "age":"2"
+    "age":"2",
+    "gender": "He",
+    "checkboxElement": "yes"
   },
 
   {
     "surname":"Julia",
     "name":"c",
-    "age":"3"
+    "age":"3",
+    "gender": "She",
+    "checkboxElement": "yes"
   },
 
   {
     "surname":"Basia",
     "name":"a",
-    "age":"1"
+    "age":"1",
+    "gender": "She",
+    "checkboxElement": "yes"
   }
 ]
