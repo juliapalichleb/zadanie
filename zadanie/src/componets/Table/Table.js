@@ -5,8 +5,6 @@ import data from "../../data/user-data.json";
 import { isEmpty } from "lodash";
 import './Table.css';
 
-
-
 const Table = ({ formRecived }) => {
 
     const [selectedUser,setSelectedUser] = useState();

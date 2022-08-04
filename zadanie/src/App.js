@@ -1,5 +1,5 @@
 import Table from "./componets/Table/Table";
-import Form from "./componets/Form/Form";
+import FormUser from "./componets/FormUser/FormUser";
 import { useState } from "react";
 import './App.css';
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Form takeForm={takeForm}/>
+          <FormUser takeForm={takeForm}/>
           <Table formRecived={formRecived}/>
       </header>
     </div>
