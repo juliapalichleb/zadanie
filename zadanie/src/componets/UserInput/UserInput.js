@@ -1,4 +1,5 @@
 import { useField } from "formik";
+import { TextField, Alert } from "@mui/material";
 
 const UserInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
@@ -6,8 +7,8 @@ const UserInput = ({ label, ...props }) => {
     return (
         <>
             <label>{ label }</label>
-            <input{ ...field} {...props }/>
-            {meta.touched && meta.error && <div>{ meta.error }</div>}
+            <TextField{ ...field} {...props } variant="outlined" />
+            {meta.touched && meta.error && <Alert severity="error">{ meta.error }</Alert>}
         </>
     );
 };

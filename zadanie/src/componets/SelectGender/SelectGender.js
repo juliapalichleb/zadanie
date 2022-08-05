@@ -11,4 +11,5 @@ const SelectGender = ({ label, ...props }) => {
         </>
     )
 }
+
 export default SelectGender;

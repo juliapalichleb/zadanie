@@ -1,9 +1,9 @@
-input, select {
+.form {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     margin: 18px 0;
-    width: 100%;
+    width: 20%;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -20,4 +20,8 @@ button {
 .errorV {
     font-size: 15px;
     color: red;
+}
+label, span {
+    font-size: 25px;
+    padding: 5px 5px;
 }

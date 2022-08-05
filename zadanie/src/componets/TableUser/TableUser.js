@@ -1,19 +1,10 @@
 import Users from "../Users/Users";
 import RowData from "../RowData/RowData";
 import { useState } from "react";
-import data from "../../data/user-data.json";
-import { isEmpty } from "lodash";
-import './Table.css';
+import './TableUser.css';
 
-const Table = ({ formRecived }) => {
-
+const TableUser = ({ updatedData }) => {
     const [selectedUser,setSelectedUser] = useState();
-
-    const updateData = isEmpty(formRecived) ?  [...data] : [...data,formRecived];
-
-    // console.log(formRecived);
-    // console.log(updateData);
-    // // console.log(isEmpty(formRecived));
 
     return (
         <>
@@ -25,12 +16,14 @@ const Table = ({ formRecived }) => {
                     <th>Age</th>
                     <th>Gender</th>
                     <th>Polish</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
-                {updateData.map((user,i) => (
-                    <Users onClick={(u)=>setSelectedUser(u)} user={user} key={`users ${i}`}/>
+                {updatedData.map((user, i) => (
+                    <Users onClick={setSelectedUser} user={user} key={`users ${i}` } idUser={i}/>
                 ))}
+
                 </tbody>
             </table>
             { selectedUser && <RowData selectedUser={selectedUser}/>}
@@ -49,4 +42,4 @@ const Table = ({ formRecived }) => {
 //
 //         )
 //     }
-export default Table;
+export default TableUser;
