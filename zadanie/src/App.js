@@ -9,22 +9,31 @@ import PopUpDelete from "./componets/PopUpDelete/PopUpDelete";
 
 function App() {
     const [updatedData, setUpdatedData] = useState(data);
+    const [deletedUser, setDeletedUser] = useState();
+    const [popUpButton, setPopUpButton] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
 
     const takeForm = (formData) => {
         setUpdatedData(isEmpty(formData) ?  [...updatedData] : [...updatedData, formData]);
     }
 
-    // const handleSubmit = (formData) => {
-    //     setUpdatedData(isEmpty(formData) ?  [...updatedData] : [...updatedData, formData]);
-    // }
+
+    const handlePopUp = () => {
+        const copy = [...updatedData]
+        popUpButton && copy.splice(deletedUser,1)
+        console.log(popUpButton)
+        setUpdatedData(copy)
+        setIsClicked(false)
+    }
 
   return (
           <div className="App">
               <FormUser takeForm={takeForm}/>
-              <userContext.Provider value={{updatedData, setUpdatedData}}>
+              <userContext.Provider value={{ handlePopUp, setDeletedUser, setPopUpButton, setIsClicked, isClicked }}>
                   <TableUser updatedData={updatedData}/>
+                  <PopUpDelete />
+                  {/*  {isPopupOpen && <PopUpDelete />}    */}
               </userContext.Provider>
-              <PopUpDelete></PopUpDelete>
           </div>
   );
 }

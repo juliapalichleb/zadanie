@@ -2,16 +2,14 @@ import { useContext } from "react";
 import { userContext } from "../../Contex/Contex";
 
 const ButtonDelete = ({ userToDeleted }) => {
-const { updatedData, setUpdatedData } = useContext(userContext);
+    const { setDeletedUser, setIsClicked } = useContext(userContext);
 
-    const deleting = () => {
-        const copy = updatedData;
-        copy.splice(userToDeleted, 1)
-        setUpdatedData(copy)
+    const handleClick = () => {
+        setDeletedUser(userToDeleted);
+        setIsClicked(true);
     }
-
     return (
-        <button onClick={deleting}>Delete</button>
+        <button onClick={handleClick}>Delete</button>
     )
 }
 

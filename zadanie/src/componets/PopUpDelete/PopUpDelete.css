@@ -2,7 +2,7 @@
     background: aliceblue;
     width: 400px;
     color: #282c34;
-    display:none;
+    display:flex;
     flex-direction: column;
     align-items: center;
     position: fixed;

@@ -4,7 +4,7 @@ import { useState } from "react";
 import './TableUser.css';
 
 const TableUser = ({ updatedData }) => {
-    const [selectedUser,setSelectedUser] = useState();
+    const [selectedUser, setSelectedUser] = useState();
 
     return (
         <>
@@ -21,7 +21,7 @@ const TableUser = ({ updatedData }) => {
                 </thead>
                 <tbody>
                 {updatedData.map((user, i) => (
-                    <Users onClick={setSelectedUser} user={user} key={`users ${i}` } idUser={i}/>
+                    <Users onClick={(u)=>setSelectedUser(u)} user={user} key={`users ${i}` } idUser={i}/>
                 ))}
 
                 </tbody>
