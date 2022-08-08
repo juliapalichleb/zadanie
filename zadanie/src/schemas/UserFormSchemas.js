@@ -7,5 +7,5 @@ export const UserFormSchemas = YupObj.object().shape ({
         .min(18, 'Too young')
         .max(40, 'Too old'),
     gender: YupObj.string()
-        .oneOf(["She","He", "Them/They"]),
+        .oneOf(["she","he", "Them_They"]),
     });

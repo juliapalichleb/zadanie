@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { userContext } from "../../Contex/Contex";
 
 const ButtonDelete = ({ userToDeleted }) => {
-    const { setDeletedUser, setIsClicked } = useContext(userContext);
+    const { setDeletedUser, setIsPopupOpen } = useContext(userContext);
 
     const handleClick = () => {
         setDeletedUser(userToDeleted);
-        setIsClicked(true);
+        setIsPopupOpen(true)
     }
+
     return (
         <button onClick={handleClick}>Delete</button>
     )

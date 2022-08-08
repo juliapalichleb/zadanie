@@ -23,10 +23,9 @@ const TableUser = ({ updatedData }) => {
                 {updatedData.map((user, i) => (
                     <Users onClick={(u)=>setSelectedUser(u)} user={user} key={`users ${i}` } idUser={i}/>
                 ))}
-
                 </tbody>
             </table>
-            { selectedUser && <RowData selectedUser={selectedUser}/>}
+            { selectedUser && <RowData selectedUser={selectedUser}/> }
         </>
     )
 }

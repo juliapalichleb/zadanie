@@ -1,9 +1,10 @@
 import { Formik, Form } from "formik";
-import {UserFormSchemas} from "../../schemas/UserFormSchemas";
+import { UserFormSchemas } from "../../schemas/UserFormSchemas";
 import UserInput from "../UserInput/UserInput";
 import SelectGender from "../SelectGender/SelectGender";
 import CheckboxElement from "../CheckboxElement/CheckboxElement";
 import Button from '@mui/material/Button';
+
 import './FormUser.css';
 
 const FormUser = ({ takeForm }) =>
@@ -35,9 +36,9 @@ const FormUser = ({ takeForm }) =>
                         label="Gender"
                         name="gender"
                     >
-                        <option value="She">She</option>
-                        <option value="He">He</option>
-                        <option value="Them/They">They / Them</option>
+                        <option value="she">She</option>
+                        <option value="he">He</option>
+                        <option value="them_they">They / Them</option>
                     </SelectGender>
                     <CheckboxElement type="checkbox" name="checkboxElement" />
                     <Button variant="contained" type="submit">Submit</Button>

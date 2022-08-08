@@ -7,11 +7,13 @@
     align-items: center;
     position: fixed;
     border-radius: 10px;
+    z-index: 2;
 }
 
 .buttonContainer {
     display: flex;
     width: 150px;
-    flex-direction: row;
     justify-content: space-between;
 }
+
+/* Plusik za flex. Będzie potrzebny ZAWSZE*/
